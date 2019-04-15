@@ -15,6 +15,11 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   cv_bridge
   image_transport
+  #pcl_conversions 
+  pcl_ros
+  sensor_msgs
+ # tf2_sensor_msgs
+ # geometry_msgs
 )
 
 find_package(OpenCV)
@@ -161,7 +166,8 @@ include_directories(
 #add_library(iasdk SHARED radarclient.cpp tcpradarclient.cpp tcpsocket.cpp timer.cpp threadedclass.cpp)
 
 add_executable(testclient_dynamic /home/saptarshi/catkin_ws/src/navtech_radar/src/testclient_main.cpp)
-target_link_libraries(testclient_dynamic PUBLIC /home/saptarshi/navtech/navtech_radar_sdk/cpp/build/libiasdk.so ${OpenCV_LIBS} ${catkin_LIBRARIES})
+#target_link_libraries(testclient_dynamic PUBLIC /home/saptarshi/navtech/navtech_radar_sdk/cpp/build/libiasdk.so ${OpenCV_LIBS} ${catkin_LIBRARIES})
+target_link_libraries(testclient_dynamic PUBLIC /home/saptarshi/iasdk/cpp/build/libiasdk.so ${OpenCV_LIBS} ${catkin_LIBRARIES})
 #link_directories(/home/sapratshi/navtech/navtech_radar_sdk/cpp/build/)
 #target_include_directories(testclient_dynamic PUBLIC /home/sapratshi/navtech/navtech_radar_sdk/cpp/)
 
